@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isOn = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Form {
+            Toggle(isOn: $isOn) {
+                if self.isOn {
+                    Text("設定は ON です。")
+                } else {
+                    Text("設定は OFF です。")
+                }
+                
+            }
+        }
     }
 }
 
